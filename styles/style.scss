@@ -18,6 +18,74 @@ html, body {
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: var(--main-font);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-dark-d) var(--color-light-grey);
+}
+
+::-webkit {
+    &-scrollbar {
+        &-button {
+            background-image: url("");
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 0px;
+        }
+        &-track {
+            background-color: var(--color-light-grey);
+        }
+        &-thumb {
+            border-radius: 3px;
+            background-color: var(--color-dark-l);
+            transition: 0.3s;
+        
+            &:hover {
+                background-color: var(--color-dark-d);
+                transition: all 0.3s;
+        
+                ::-webkit-scrollbar-button {
+                    background-image: url("");
+                    background-repeat: no-repeat;
+                    width: 8px;
+                    height: 0px;
+                }
+        
+                ::-webkit-scrollbar-track {
+                    background-color: var(--color-light-grey);
+                }
+        
+                ::-webkit-scrollbar-thumb {
+                    border-radius: 3px;
+                    background-color: var(--color-dark-l);
+                    transition: 0.3s;
+                }
+        
+                ::-webkit-scrollbar-thumb:hover {
+                    background-color: var(--color-dark-d);
+                    transition: all 0.3s;
+                }
+        
+                ::-webkit-resizer {
+                    background-image: url("");
+                    background-repeat: no-repeat;
+                    width: 4px;
+                    height: 0px;
+                }
+        
+                ::-webkit-scrollbar {
+                    width: 5px;
+                }
+            }
+        }
+    }
+    &-resizer {
+        background-image: url("");
+        background-repeat: no-repeat;
+        width: 4px;
+        height: 0px;
+    }
+    &-scrollbar {
+        width: 5px;
+    }
 }
 
 .container {
