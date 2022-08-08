@@ -116,6 +116,9 @@ html, body {
     &__navigate {
         display: flex;
         flex-direction: row;
+        @media screen and (max-width: 1055px) {
+            display: none;
+        }
     }
     &__link {
         text-decoration: none;
@@ -164,6 +167,9 @@ html, body {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        @media screen and (max-width: 1055px) {
+            display: none;
+        }
         &--item {
             text-decoration: none;
             margin-right: 8px;
@@ -179,6 +185,88 @@ html, body {
             color: var(--color-orange);
         }
     }
+    &__mobile-btn {
+        position: relative;
+        height: 40px;
+        width: 40px;
+        margin-right: 20px;
+        display: none;
+        background: none;
+        border: none;
+        @media screen and (max-width: 1055px) {
+            display: flex;
+        }
+        span {
+            position: absolute;
+            top: 50%; left: 50%;
+            margin-top: -1px;
+            margin-left: -15px;
+            height: 2px;
+            width: 30px;
+            background: var(--color-light);
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%; left: 50%;
+                margin-top: -1px;
+                margin-left: -15px;
+                height: 2px;
+                width: 30px;
+                background: var(--color-light);
+                transition: transform .3s ease, background .3s ease;
+            }
+            &::before {
+                transform: translateY(-10px);
+            }   
+            &::after {
+                transform: translateY(10px);
+            }
+        }
+        &.active {
+            span {
+                height: 0;
+                background: var(--color-dark-d);
+                &::before {
+                    transform: rotate(45deg);
+                    background: var(--color-dark-d);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                    background: var(--color-dark-d);
+                }
+            }
+        }
+    }
+    &__mobile {
+        &-nav {
+            position: absolute;
+            top: 0; right: 0;
+            display: none;
+            height: 100vh;
+            width: 100%;
+            padding: 15px;
+            max-width: 500px;
+            flex-direction: column;
+            justify-content: space-around;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            background: #EDEDED;
+            &.visible {
+                transform: translateX(0%);
+            }
+            @media screen and (max-width: 1055px) {
+                display: flex;
+            }
+        }
+        &--item {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-orange);
+        }
+    }
 }
 .preview {
     padding: 244px 0;
@@ -187,6 +275,9 @@ html, body {
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @media screen and (max-width: 850px) {
+        padding: 122px 0;
+    }
     &__wrapper {
         max-width: 765px;
         width: 100%;
@@ -201,11 +292,19 @@ html, body {
         line-height: 71px;
 
         color: var(--color-light);
+        @media screen and (max-width: 850px) {
+            line-height: 35px;
+            font-size: 32px;
+        }
         span {
             font-weight: 300;
             font-size: 124px;
             line-height: 138px;
             color: var(--color-orange);
+            @media screen and (max-width: 850px) {
+                line-height: 69px;
+                font-size: 32px;
+            }
         }
     }
     &__description {
@@ -214,6 +313,10 @@ html, body {
         line-height: 54px;
 
         color: var(--color-light);
+        @media screen and (max-width: 850px) {
+            line-height: 54px;
+            font-size: 32px;
+        }
     }
     &__button {
         cursor: pointer;
@@ -259,6 +362,7 @@ html, body {
         background: var(--color-orange);
         color: var(--color-light-second);
         z-index: 1;
+        
     }
     &__wrapper {
         padding: 120px 0;
@@ -273,6 +377,10 @@ html, body {
         font-weight: 700;
         font-size: 64px;
         line-height: 71px;
+        @media screen and (max-width: 850px) {
+            line-height: 35px;
+            font-size: 32px;
+        }
     }
     &__info-item {
         display: flex;
