@@ -739,3 +739,34 @@ html, body {
   font-size: 24px;
   line-height: 27px;
 }
+
+.view {
+  background-color: #000;
+  background-image: url(../images/anim.gif);
+  background-position: left;
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  padding: 127px 0;
+  color: var(--color-light);
+}
+
+.view__title {
+  width: 716px;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 71px;
+}
+
+@media screen and (max-width: 850px) {
+  .view__title {
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+
+.view__description {
+  width: 725px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+}
