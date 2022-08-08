@@ -282,6 +282,7 @@ html, body {
         }
     }
 }
+
 .preview {
     padding: 244px 0;
     background: url(../images/preview.gif);
@@ -300,6 +301,7 @@ html, body {
         align-items: flex-start;
     }
     &__title {
+        margin-bottom: 55px;
         font-family: var(--main-font);
         font-weight: 700;
         font-size: 64px;
@@ -322,6 +324,7 @@ html, body {
         }
     }
     &__description {
+        margin-bottom: 55px;
         font-weight: 500;
         font-size: 48px;
         line-height: 54px;
