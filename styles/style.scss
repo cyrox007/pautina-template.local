@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap');
 :root {
-    --width-container: 1169px;
+    --width-container: 1379px;
 
     --color-light: #F5F5F5;
     --color-light-second: #FEFEFE;
@@ -22,7 +22,7 @@ html, body {
     scrollbar-color: var(--color-dark-d) var(--color-light-grey);
 }
 
-::-webkit {
+*::-webkit {
     &-scrollbar {
         &-button {
             background-image: url("");
@@ -92,7 +92,7 @@ html, body {
     width: 100%;
     max-width: var(--width-container);
     margin: 0 auto;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1400px) {
         padding: 0 15px;
     }
 }
@@ -106,6 +106,7 @@ html, body {
     border-bottom: 2px solid #2F2F2F;
     filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.8));
     background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
     &__wrapper {
         display: flex;
         flex-direction: row;
@@ -233,5 +234,131 @@ html, body {
         img {
             margin-left: 8px;
         }
+    }
+}
+
+.effectiveness {
+    position: relative;
+    background-image: url(../images/preview.gif);
+    background-size: cover;
+    object-fit: cover;
+    
+    background-position: center;
+    z-index: -2;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        background: rgba(254, 254, 254, 0.8);
+        z-index: -1;
+    }
+    &__header {
+        height: 140px;
+        display: flex;
+        align-items: center;
+        background: var(--color-orange);
+        color: var(--color-light-second);
+        z-index: 1;
+    }
+    &__wrapper {
+        padding: 120px 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+    }
+    &__title {
+        margin: 0;
+                
+        font-family: var(--main-font);
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 71px;
+    }
+    &__info-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 24px;
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &--text,
+        &--block {
+            flex: 50%;
+        }
+        &--text {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 27px;
+        }
+        &--block {
+            display: flex;
+            justify-content: center;
+        }
+        &--big-text {
+            position: relative;
+            width: 360px;
+            height: 240px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-orange);
+            z-index: 2;
+
+            font-family: var(--main-font);
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 107px;
+            span {
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 27px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;bottom: 0;left: 0;right: 0;
+                background: var(--color-light-second);
+                mix-blend-mode: normal;
+                filter: blur(50px);
+                z-index: -1;
+            }
+        }
+    }
+    &__reviews {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: 2;
+    }
+    &__review {
+        width: 331px;
+        min-height: 286px;
+        padding: 12px 34px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(245, 245, 245, 0.8);
+        mix-blend-mode: screen;
+    }
+    &__quotation {
+        width: 64px;
+        height: 64px;
+    }
+    &__text {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 19px;
+    }
+    &__author {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 27px;
     }
 }
