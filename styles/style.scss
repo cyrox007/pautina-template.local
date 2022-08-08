@@ -92,6 +92,7 @@ html, body {
     width: 100%;
     max-width: var(--width-container);
     margin: 0 auto;
+    box-sizing: border-box;
     @media screen and (max-width: 1400px) {
         padding: 0 15px;
     }
@@ -112,6 +113,16 @@ html, body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+    &__logo {
+        @media screen and (max-width: 850px) {
+            width: 127px;
+            height: 26px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
     &__navigate {
         display: flex;
@@ -337,6 +348,9 @@ html, body {
         img {
             margin-left: 8px;
         }
+        @media screen and (max-width: 850px) {
+            justify-content: center;
+        }
     }
 }
 
@@ -369,6 +383,7 @@ html, body {
         display: flex;
         flex-direction: column;
         z-index: 1;
+        box-sizing: border-box;
     }
     &__title {
         margin: 0;
@@ -389,9 +404,15 @@ html, body {
         margin-bottom: 24px;
         &:nth-child(even) {
             flex-direction: row-reverse;
+            @media screen and (max-width: 850px) {
+                flex-direction: column;
+            }
         }
         &:last-child {
             margin-bottom: 0;
+        }
+        @media screen and (max-width: 850px) {
+            flex-direction: column;
         }
         &--text,
         &--block {
@@ -444,15 +465,22 @@ html, body {
         flex-direction: row;
         justify-content: space-between;
         z-index: 2;
+        
+        @media screen and (max-width: 850px) {
+            flex-direction: column;
+        }
     }
     &__review {
-        width: 331px;
+        max-width: 331px;
         min-height: 286px;
         padding: 12px 34px;
         display: flex;
         flex-direction: column;
         background: rgba(245, 245, 245, 0.8);
         mix-blend-mode: screen;
+        @media screen and (max-width: 850px) {
+            flex-direction: column;
+        }
     }
     &__quotation {
         width: 64px;
