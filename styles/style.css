@@ -108,6 +108,10 @@ html, body {
   }
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .header {
   position: fixed;
   height: 120px;
@@ -741,10 +745,11 @@ html, body {
 }
 
 .view {
+  position: relative;
   background-color: #000;
   background-image: url(../images/anim.gif);
   background-position: left;
-  background-size: 60% 100%;
+  background-size: 1500px 100%;
   background-repeat: no-repeat;
   padding: 127px 0;
   color: var(--color-light);
@@ -769,4 +774,281 @@ html, body {
   font-weight: 400;
   font-size: 24px;
   line-height: 27px;
+}
+
+.view button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 740px;
+  height: 70px;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--color-orange);
+  color: var(--color-light);
+  border: none;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 27px;
+}
+
+.view button img {
+  margin-left: 8px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.faq {
+  padding: 120px 0;
+  background: rgba(0, 0, 0, 0.795);
+  background-image: url(../images/anim2.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8));
+}
+
+.faq__title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 71px;
+  color: var(--color-light);
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .faq__title {
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+
+.faq__block {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.faq__question {
+  position: relative;
+  padding: 25px 0;
+  border-top: 1px solid var(--color-orange);
+  border-bottom: 1px solid var(--color-orange);
+}
+
+.faq__question img {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  margin: auto 0;
+  -webkit-transition: -webkit-transform .15s ease;
+  transition: -webkit-transform .15s ease;
+  transition: transform .15s ease;
+  transition: transform .15s ease, -webkit-transform .15s ease;
+}
+
+.faq__question img.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.faq__question--title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  color: var(--color-light);
+}
+
+.faq__answer {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.15s ease-out;
+  transition: max-height 0.15s ease-out;
+  color: var(--color-light);
+}
+
+.request {
+  padding: 120px 0;
+  background-color: rgba(18, 18, 18, 0.95);
+  background-image: url(../images/tile.png);
+}
+
+.request__form {
+  padding: 64px 116px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: var(--color-light-grey);
+  border-radius: 65px;
+}
+
+.request form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.request__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Checked */
+  /* Hover */
+}
+
+.request__left .form_radio_btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.request__left .form_radio_btn input[type=radio] {
+  display: none;
+}
+
+.request__left .form_radio_btn label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  padding: 14px 19px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid var(--color-orange);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.request__left .form_radio_btn input[type=radio]:checked + label {
+  background: var(--color-orange);
+  color: var(--color-light);
+}
+
+.request__left .form_radio_btn label:hover {
+  color: var(--color-orange);
+}
+
+.request__left .form_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.request__left .form_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.request__left .form_group label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.request__left .form_group select {
+  height: 47px;
+  width: 246px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: #a5a5a5;
+  margin-right: 22px;
+}
+
+.request__left .form_group input {
+  height: 47px;
+  width: 135px;
+  margin-right: 22px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: #a5a5a5;
+}
+
+.request__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.request__right input {
+  height: 47px;
+  width: 295px;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: #8E9296;
+}
+
+.request__right button {
+  height: 47px;
+  border: none;
+  background: var(--color-orange);
+  color: var(--color-light);
+}
+
+.request__right span {
+  text-align: right;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.request__title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: var(--color-dark-d);
+}
+
+.request__description {
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  color: var(--color-dark-l);
 }
