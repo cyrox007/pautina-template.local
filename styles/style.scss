@@ -372,7 +372,7 @@ html, body {
     
     background-position: center;
     z-index: -2;
-    &::before {
+    &::after {
         content: '';
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
@@ -619,7 +619,9 @@ html, body {
     padding: 120px 0;
     background-color: rgba(18, 18, 18, 0.95);
     background-image: url(../images/tile.png);
-    
+    * {
+        box-sizing: border-box;
+    }
     &__form {
         padding: 64px 116px;
         display: flex;
@@ -628,10 +630,18 @@ html, body {
     }
     form {
         display: flex;
+        box-sizing: border-box;
+        @media screen and (max-width: 900px) {
+            flex-wrap: wrap;
+        }
     }
     &__left {
         display: flex;
+        flex-grow: 3;
         flex-direction: column;
+        @media screen and (max-width: 900px) {
+            margin-bottom: 20px;
+        }
         .form_radio_btn {
             display: inline-flex;
             
@@ -665,6 +675,7 @@ html, body {
         .form_row {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
         }
         .form_group {
             display: flex;
@@ -695,11 +706,12 @@ html, body {
         }
     }
     &__right {
+        flex-grow: 0.5;
         display: flex;
         flex-direction: column;
         input {
             height: 47px;
-            width: 295px;
+            width: 100%;
             padding: 15px;
             margin-bottom: 20px;
             color: #8E9296;
@@ -732,5 +744,102 @@ html, body {
         font-size: 24px;
         line-height: 27px;
         color: var(--color-dark-l)
+    }
+}
+footer {
+    background: var(--color-light);
+    padding: 120px 0;
+    h4 {
+        color: var(--color-dark-d);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 32px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        * {
+            margin-bottom: 12px;
+        }
+    }
+    input {
+        padding: 14px;
+        border: none;
+        &::placeholder {
+            color: #D9D9D9;
+        }
+        &[type=submit] {
+            color: var(--color-light);
+            background: var(--color-orange);
+        }
+    }
+    a, p {
+        cursor: pointer;
+        text-decoration: none;
+        margin-bottom: 12px;
+        color: var(--color-dark-l);
+        transition: color .2s ease;
+        &:hover {
+            color: var(--color-dark-d);
+        }
+    }
+    p {
+        max-width: 300px;
+    }
+}
+.footer {
+    &__wrapper {
+        display: grid;
+        gap: 113px;
+        grid-template-areas: 
+        "logo nav nav nav"
+        ". substr substr request"
+        "btn . . request";
+        @media screen and (max-width: 1050px) {
+            gap: 60px;
+            grid-template-areas: 
+            "logo nav"
+            "substr request"
+            "btn request";
+        }
+        @media screen and (max-width: 600px) {
+            gap: 30px;
+            grid-template-areas: 
+            "logo"
+            "nav"
+            "substr" 
+            "request";
+        }
+    }
+    &__nav {
+        grid-area: nav;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            @media screen and (max-width: 600px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__logo {
+        grid-area: logo;
+        @media screen and (max-width: 600px) {
+            justify-self: center;
+        }
+    }
+    &__substract {
+        grid-area: substr;
+    }
+    &__call-request {
+        grid-area: request;
     }
 }
