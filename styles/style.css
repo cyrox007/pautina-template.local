@@ -909,6 +909,13 @@ html, body {
   border-radius: 65px;
 }
 
+@media screen and (max-width: 480px) {
+  .request__form {
+    padding: 24px 16px;
+    border-radius: 33px;
+  }
+}
+
 .request form {
   display: -webkit-box;
   display: -ms-flexbox;

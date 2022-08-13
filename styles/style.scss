@@ -627,6 +627,10 @@ html, body {
         display: flex;
         background-color: var(--color-light-grey);
         border-radius: 65px;
+        @media screen and (max-width: 480px) {
+            padding: 24px 16px;
+            border-radius: 33px;
+        }
     }
     form {
         display: flex;
@@ -644,7 +648,6 @@ html, body {
         }
         .form_radio_btn {
             display: inline-flex;
-            
         }
         .form_radio_btn input[type=radio] {
             display: none;
