@@ -944,6 +944,7 @@ html, body {
           flex-direction: column;
   /* Checked */
   /* Hover */
+  /* Disabled */
 }
 
 @media screen and (max-width: 900px) {
@@ -953,9 +954,7 @@ html, body {
 }
 
 .request__left .form_radio_btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
 }
 
 .request__left .form_radio_btn input[type=radio] {
@@ -963,30 +962,29 @@ html, body {
 }
 
 .request__left .form_radio_btn label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   cursor: pointer;
-  padding: 14px 19px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
+  padding: 0px 15px;
+  line-height: 34px;
   border: 1px solid var(--color-orange);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
 }
 
 .request__left .form_radio_btn input[type=radio]:checked + label {
-  background: var(--color-orange);
   color: var(--color-light);
+  background: var(--color-orange);
 }
 
 .request__left .form_radio_btn label:hover {
-  color: var(--color-orange);
+  color: #666;
+}
+
+.request__left .form_radio_btn input[type=radio]:disabled + label {
+  background: #efefef;
+  color: #666;
 }
 
 .request__left .form_row {
