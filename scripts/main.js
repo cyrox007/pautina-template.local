@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let url = window.location.pathname;
+    let url1 = url.substring(1);
+
     let links = document.querySelectorAll('.header__link');
     
     links.forEach(element => {
-        if (element.getAttribute('href') == url) {
+        if (element.getAttribute('href') == url1) {
             element.classList.toggle('active')
         }
     });
