@@ -473,17 +473,21 @@ html, body {
         width: 100%;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         z-index: 2;
         box-sizing: border-box;
         @media screen and (max-width: 850px) {
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
     &__review {
         box-sizing: border-box;
         max-width: 331px;
         min-height: 286px;
+        margin-bottom: 15px;
         padding: 12px 34px;
         display: flex;
         flex-direction: column;
@@ -519,7 +523,7 @@ html, body {
     padding: 127px 0;
     color: var(--color-light);
     &__title {
-        width: 716px;
+        max-width: 716px;
         font-weight: 700;
         font-size: 64px;
         line-height: 71px;
@@ -529,7 +533,7 @@ html, body {
         }
     }
     &__description {
-        width: 725px;
+        max-width: 725px;
         font-weight: 400;
         font-size: 24px;
         line-height: 27px;
@@ -669,13 +673,13 @@ html, body {
          
         /* Hover */
         .form_radio_btn label:hover {
-            color: #666;
+            color: var(--color-dark-l);
         }
          
         /* Disabled */
         .form_radio_btn input[type=radio]:disabled + label {
-            background: #efefef;
-            color: #666;
+            background: var(--color-light);
+            color: var(--color-dark-l);
         }
         .form_row {
             display: flex;
@@ -696,7 +700,7 @@ html, body {
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 17px;
-                color: #a5a5a5;
+                color: var(--color-light-grey);
                 margin-right: 22px;
             }
             input {
@@ -706,7 +710,7 @@ html, body {
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 17px;
-                color: #a5a5a5
+                color: var(--color-light-grey)
             }
         }
     }
