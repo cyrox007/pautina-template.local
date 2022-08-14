@@ -904,6 +904,9 @@ footer {
     &__big-banner {
         width: 100%;
         height: auto;
+        @media screen and (max-width: 900px) {
+            margin-top: 127px;
+        }
         img {
             width: 100%;
             height: auto;

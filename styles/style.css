@@ -958,6 +958,11 @@ footer p {
   width: 100%;
   height: auto;
 }
+@media screen and (max-width: 900px) {
+  .preview-two__big-banner {
+    margin-top: 127px;
+  }
+}
 .preview-two__big-banner img {
   width: 100%;
   height: auto;
