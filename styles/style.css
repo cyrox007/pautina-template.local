@@ -609,6 +609,9 @@ section {
     flex: auto;
     margin-right: 15px;
   }
+  .preview-two__tab-links a:last-child {
+    margin-right: 0;
+  }
 }
 .preview-two__tab-content {
   flex: auto;
