@@ -338,6 +338,12 @@ section {
             &:hover {
                 transform: translateX(0);
             }
+            img {
+                @media screen and (max-width: 480px) {
+                    height: 50px;
+                    width: auto;
+                }
+            }
         }
     }
     &__title {
@@ -532,12 +538,20 @@ section {
         display: flex;
         flex-direction: row;
         z-index: 2;
+        @media screen and (max-width: 800px) {
+            flex-wrap: wrap;
+        }
     }
     &__tab {
         &-links {
             width: 218px;
             display: flex;
             flex-direction: column;
+            @media screen and (max-width: 800px) {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
             a {
                 padding: 20px 0;
                 margin-bottom: 19px;
@@ -551,14 +565,16 @@ section {
                 color: var(--color-dark-l);
                 background: var(--color-light-grey);
                 transition: color .3s ease-in-out, background .3s ease-in-out;
-                &:last-child {
-                    margin-bottom: 0;
-                }
+
                 &.active,
                 &:hover,
                 &:checked {
                     background: var(--color-light);
                     color: var(--color-orange);
+                }
+                @media screen and (max-width: 800px) {
+                    flex: auto;
+                    margin-right: 15px;
                 }
             }
         }
@@ -577,6 +593,9 @@ section {
                     font-weight: 700;
                     color: var(--color-orange);
                 }
+                @media screen and (max-width: 425px) {
+                    font-size: 24px;
+                }
             }
             h2 {
                 margin-bottom: 15px;
@@ -589,6 +608,9 @@ section {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                }
                 ul {
                     h3 {
                         font-weight: 700;
@@ -608,6 +630,9 @@ section {
                     }
                 }
             }
+            @media screen and (max-width: 800px) {
+                margin-left: 0;
+            }
         }
     }
     .faq {
@@ -618,7 +643,8 @@ section {
             color: var(--color-dark-l);
         }
         &__block {
-            width: 680px;
+            width: 100%;
+            max-width: 680px;
             margin: 0 auto;
         }
         &__question {
@@ -677,12 +703,16 @@ section {
         font-weight: 300;
         font-size: 48px;
         line-height: 54px;
+        @media screen and (max-width: 900px) {
+            font-size: 32px;
+        }
     }
     h3 {
         text-align: center;
     }
     form {
-        width: 680px;
+        width: 100%;
+        max-width: 680px;
         margin-top: 36px;
         display: flex;
         justify-content: center;
@@ -696,6 +726,9 @@ section {
                 font-size: 20px;
                 line-height: 22px;
             }
+        }
+        @media screen and (max-width: 900px) {
+            margin-bottom: 50px;
         }
     }
 }
