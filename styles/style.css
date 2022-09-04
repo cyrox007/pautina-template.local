@@ -761,7 +761,8 @@ section {
 }
 .preview-two .carusel__card {
   position: relative;
-  width: 335px;
+  max-width: 335px;
+  width: 100%;
   height: 335px;
   display: inline-flex;
   flex-shrink: 0;
@@ -773,9 +774,13 @@ section {
 }
 .preview-two .carusel__card--bg {
   position: absolute;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   z-index: 2;
+}
+.preview-two .carusel__card--bg img {
+  width: 100%;
+  height: auto;
 }
 .preview-two .carusel__card--content {
   position: relative;
