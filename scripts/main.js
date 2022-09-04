@@ -49,11 +49,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let sliderList = slider.querySelector('.carusel__list');
     let sliderTrack = slider.querySelector('.carusel__track');
     
-    let slides_arr = slider.querySelectorAll('carusel__card');
+    let slides_arr = slider.querySelectorAll('.carusel__card');
     
-    let prev = arrows.children[0],
-        next = arrows.children[1],
-        slideWidth = slides_arr[0].offsetWidth,
+    let slideWidth = slides_arr[0].offsetWidth,
         slideIndex = 0,
         posInit = 0,
         posX1 = 0,
@@ -80,9 +78,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 sliderTrack.style.transition = 'transform .5s';
             }
             sliderTrack.style.transform = `translate3d(-${slideIndex * slideWidth}px, 0px, 0px)`;
-
-            prev.classList.toggle('disabled', slideIndex === 0);
-            next.classList.toggle('disabled', slideIndex === --slides_arr.length);
         },
         swipeStart = function () {
             let evt = getEvent();
@@ -217,18 +212,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
     sliderTrack.addEventListener('transitionend', () => allowSwipe = true);
     slider.addEventListener('touchstart', swipeStart);
     slider.addEventListener('mousedown', swipeStart);
-
-    arrows.addEventListener('click', function () {
-        let target = event.target;
-
-        if (target.classList.contains('next')) {
-            slideIndex++;
-        } else if (target.classList.contains('prev')) {
-            slideIndex--;
-        } else {
-            return;
-        }
-
-        slide();
-    });
 });
