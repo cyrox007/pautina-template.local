@@ -32,6 +32,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
         });
     });
+
+    /* TOP WINDOW */
+    function scrollTo() {
+        window.scroll({
+            left: 0,
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    let scrollBtn = document.getElementById('scroll-top');
+    scrollBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        scrollTo();
+    });
     
     /* Слайдер */
     let slides = document.querySelectorAll('.preview-two__big-banner--item');
