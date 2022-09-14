@@ -1541,6 +1541,7 @@ footer p {
   justify-content: center;
   max-width: 160px;
   margin-top: 21px;
+  margin-bottom: 0;
   padding: 13px 0;
   border: 2px solid #000000;
   border-radius: 16px;
