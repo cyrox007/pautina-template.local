@@ -1498,6 +1498,9 @@ footer {
         a {
             text-decoration: underline;
             color: #F5F5F5;
+            &:hover{
+                color: #F5F5F5;
+            }
         }
     }
 }
